@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +18,7 @@ export default {
 			}
 		},
 		extend: {
+			
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -54,19 +54,20 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				corporate: {
-					50: '#f0f7ff',
-					100: '#e0effe',
-					200: '#b9ddfe',
-					300: '#7cc3fd',
-					400: '#36a4f9',
-					500: '#0b87ea',
-					600: '#016bc8',
-					700: '#0255a2',
-					800: '#064986',
-					900: '#0b3d6f',
-					950: '#072649'
+					50: '#fdf2f4',
+					100: '#fce7ea',
+					200: '#f9d0d8',
+					300: '#f4acba',
+					400: '#ec7a91',
+					500: '#e15069',
+					600: '#cf3046',
+					700: '#af2239',
+					800: '#921d36',
+					900: '#7c1d34',
+					950: '#450b19'
 				}
 			},
+			
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
