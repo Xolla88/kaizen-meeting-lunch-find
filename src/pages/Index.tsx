@@ -14,8 +14,13 @@ const Index = () => {
   const { toast } = useToast();
 
   const handleBookMeetingRoom = () => {
-    // Open Google Calendar in a new tab
-    window.open('https://calendar.google.com', '_blank');
+    // Open Yandex Calendar in a new tab instead of Google Calendar
+    window.open('https://calendar.yandex.ru', '_blank');
+    
+    toast({
+      title: "Открытие календаря",
+      description: "Открываем Яндекс Календарь для бронирования переговорной",
+    });
   };
 
   const handleOrderLunch = () => {
