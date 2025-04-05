@@ -20,13 +20,13 @@ const FeatureIcon: React.FC<FeatureIconProps> = ({
     <button
       onClick={onClick}
       className={cn(
-        "flex flex-col items-center justify-center p-6 rounded-full transition-all",
-        "bg-white hover:bg-gray-50 w-full",
-        "text-[#2A3A4A]",
+        "flex flex-col items-center justify-center p-6 rounded-xl transition-all",
+        "bg-white hover:bg-gray-50 w-full shadow-sm",
+        "text-[#2A3A4A] border border-gray-100",
         className
       )}
     >
-      <Icon size={32} strokeWidth={1.5} className="mb-4" />
+      <Icon size={32} strokeWidth={1.5} className="mb-4 text-corporate-700" />
       <span className="text-lg font-medium text-center">{label}</span>
     </button>
   );
