@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
-import { Search, Menu } from 'lucide-react';
+import { Search, Menu, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,15 +11,34 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const isIndexPage = location.pathname === '/';
+  
+  const handleBack = () => {
+    navigate(-1);
   };
 
   return (
     <div className="min-h-screen bg-white">
       <header className="bg-corporate-700 py-4 px-6 flex justify-between items-center">
         <div className="flex items-center">
+          {!isIndexPage && (
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={handleBack} 
+              className="text-white mr-2 hover:bg-corporate-600"
+              aria-label="Назад"
+            >
+              <ArrowLeft size={24} />
+            </Button>
+          )}
           <div className="text-white font-bold flex items-center">
             <div className="w-12 h-12 mr-2">
               <svg viewBox="0 0 100 100" className="w-full h-full">
