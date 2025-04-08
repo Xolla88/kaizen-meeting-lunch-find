@@ -7,19 +7,20 @@ import EmployeeFinder from '@/components/EmployeeFinder';
 import { Lightbulb, Calendar, UtensilsCrossed, Users } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
+import MeetingRoomBooking from '@/components/MeetingRoomBooking';
 
 const Index = () => {
   const [isKaizenOpen, setIsKaizenOpen] = useState(false);
   const [isEmployeeFinderOpen, setIsEmployeeFinderOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const { toast } = useToast();
 
   const handleBookMeetingRoom = () => {
-    // Open Yandex Calendar in a new tab instead of Google Calendar
-    window.open('https://calendar.yandex.ru', '_blank');
+    setIsBookingOpen(true);
     
     toast({
-      title: "Открытие календаря",
-      description: "Открываем Яндекс Календарь для бронирования переговорной",
+      title: "Бронирование переговорной",
+      description: "Открываем форму бронирования переговорной комнаты",
     });
   };
 
@@ -92,6 +93,7 @@ const Index = () => {
       
       <KaizenForm open={isKaizenOpen} onOpenChange={setIsKaizenOpen} />
       <EmployeeFinder open={isEmployeeFinderOpen} onOpenChange={setIsEmployeeFinderOpen} />
+      <MeetingRoomBooking open={isBookingOpen} onOpenChange={setIsBookingOpen} />
     </Layout>
   );
 };
