@@ -12,11 +12,11 @@ interface MeetingRoomBookingProps {
 }
 
 const rooms = [
-  { id: 1, name: 'Переговорная 1', capacity: 4, available: true },
-  { id: 2, name: 'Переговорная 2', capacity: 6, available: true },
-  { id: 3, name: 'Переговорная 3', capacity: 6, available: true },
+  { id: 1, name: 'Переговорная 1', capacity: 3, available: true },
+  { id: 2, name: 'Переговорная 2', capacity: 8, available: true },
+  { id: 3, name: 'Переговорная 3', capacity: 2, available: true },
   { id: 4, name: 'Большая переговорная', capacity: 12, available: true },
-  { id: 5, name: 'Точка рационализаторства', capacity: 8, available: true },
+  { id: 5, name: 'Точка рационализаторства', capacity: 40, available: true },
 ];
 
 const MeetingRoomBooking: React.FC<MeetingRoomBookingProps> = ({ open, onOpenChange }) => {
