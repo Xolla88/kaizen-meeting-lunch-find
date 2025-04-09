@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Search, Menu, ArrowLeft } from 'lucide-react';
+import { Search, Menu, ArrowLeft, UserRound } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -22,6 +22,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   
   const handleBack = () => {
     navigate(-1);
+  };
+
+  const handleAccountClick = () => {
+    navigate('/auth');
   };
 
   return (
@@ -59,6 +63,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
         
         <div className="flex items-center gap-4">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="text-white hover:bg-corporate-600" 
+            aria-label="Личный кабинет"
+            onClick={handleAccountClick}
+          >
+            <UserRound size={24} />
+          </Button>
           <Button variant="ghost" size="icon" className="text-white hover:bg-corporate-600" aria-label="Поиск">
             <Search size={24} />
           </Button>
@@ -96,6 +109,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <li>
                   <Button variant="ghost" className="w-full justify-start text-lg text-[#2A3A4A]" asChild>
                     <a href="/">Главная</a>
+                  </Button>
+                </li>
+                <li>
+                  <Button variant="ghost" className="w-full justify-start text-lg text-[#2A3A4A]" asChild>
+                    <a href="/auth">Личный кабинет</a>
                   </Button>
                 </li>
                 <li>
